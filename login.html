@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopHub - Login</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <div class="container">
+    <!-- Top bar -->
+    <div class="top-bar">
+      <div class="top-bar-left">
+        <a href="#">About Us</a>
+        <a href="#">My Account</a>
+        <a href="#">Wishlist</a>
+        <a href="#">Order Tracking</a>
+      </div>
+      <div class="top-bar-right">
+        <span>Get great devices up to 50% off <a href="#">View details</a></span>
+        <span>Need help? Call Us: <b>1800 900</b></span>
+        <a href="#">English</a>
+        <a href="#">USD</a>
+      </div>
+    </div>
+
+    <!-- Main nav -->
+    <div class="main-nav">
+      <div class="logo">
+        <img src="https://nest-nextjs-13.vercel.app/assets/imgs/theme/logo.svg" alt="Nest Logo">
+      </div>
+
+      <div class="search-box">
+        <select>
+          <option>All Categories</option>
+        </select>
+        <input type="text" placeholder="Search">
+      </div>
+
+      <div class="nav-right">
+        <a href="#"><i class="fa-solid fa-code-compare"></i> Compare <span class="badge">5</span></a>
+        <a href="#"><i class="fa-regular fa-heart"></i> Wishlist <span class="badge">0</span></a>
+        <a href="#"><i class="fa-solid fa-cart-shopping"></i> Cart <span class="badge">1</span></a>
+        <a href="#"><i class="fa-regular fa-user"></i> Account</a>
+      </div>
+    </div>
+
+    <!-- Bottom menu -->
+    <div class="bottom-menu">
+      <div class="bottom-left">
+        <a href="#" class="browse-btn"><i class="fa-solid fa-bars"></i> Browse All Categories</a>
+        <a href="#">Hot Deals</a>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Shop</a>
+        <a href="#">Vendors</a>
+        <a href="#">Mega menu</a>
+        <a href="#">Blog</a>
+        <a href="#">Pages</a>
+        <a href="#">Contact</a>
+      </div>
+      <div class="bottom-right">
+        <i class="fa-solid fa-headset"></i>
+        <span>1900 - 888 <small>24/7 Support Center</small></span>
+      </div>
+    </div>
+  </div>
+
+    <!-- Main Content -->
+    <main>
+        <div class="login-container">
+            <div class="login-card">
+                <!-- Left side - Image -->
+                <div class="login-image">
+                    <img src="https://images.unsplash.com/photo-1755338646815-beb7bc0171ed?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Woman working on laptop">
+                </div>
+
+                <!-- Right side - Login Form -->
+                <div class="login-form-container">
+                    <div class="login-form-content">
+                        <h1 class="login-title">Login</h1>
+                        <p class="login-subtitle">
+                            Don't have an account? 
+                            <a href="#">Create here</a>
+                        </p>
+
+                        <form id="loginForm">
+                            <!-- Username Input -->
+                            <div class="form-group">
+                                <input 
+                                    type="text" 
+                                    id="username" 
+                                    class="form-input" 
+                                    placeholder="Username or Email *" 
+                                    required
+                                    autocomplete="username"
+                                >
+                            </div>
+
+                            <!-- Password Input -->
+                            <div class="form-group">
+                                <input 
+                                    type="password" 
+                                    id="password" 
+                                    class="form-input" 
+                                    placeholder="Your password *" 
+                                    required
+                                    autocomplete="current-password"
+                                >
+                            </div>
+
+                            <!-- Security Code -->
+                            <div class="form-group">
+                                <div class="captcha-group">
+                                    <input 
+                                        type="text" 
+                                        id="securityCode" 
+                                        class="form-input captcha-input" 
+                                        placeholder="Security code *" 
+                                        required
+                                        autocomplete="off"
+                                    >
+                                    <div class="captcha-display">
+                                        <div id="captcha" class="captcha-code"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Options -->
+                            <div class="form-options">
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="remember" class="checkbox-input">
+                                    <label for="remember" class="checkbox-label">Remember me</label>
+                                </div>
+                                <a href="#" class="forgot-link">Forgot password?</a>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <button type="submit" class="btn-primary">
+                                Log in
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer container">
+        <div class="footer-main">
+
+            <!-- Left Info -->
+            <div class="footer-info">
+                <img src="https://nest-nextjs-13.vercel.app/assets/imgs/theme/logo.svg" alt="Nest Logo" class="footer-logo">
+                <p class="footer-desc">Awesome grocery store website template</p>
+                <p style="margin-right: 10px;"><i class="fa-solid fa-location-dot"></i> <b>Address:</b> 5171 W Campbell Ave undefined Kent, Utah
+                    53127 United States</p>
+                <p><i class="fa-solid fa-headset"></i> <b>Call Us:</b> (+91) - 540-025-124553</p>
+                <p><i class="fa-solid fa-envelope"></i> <b>Email:</b> sale@Nest.com</p>
+                <p><i class="fa-solid fa-clock"></i> <b>Hours:</b> 10:00 - 18:00, Mon - Sat</p>
+            </div>
+
+            <!-- Company -->
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Delivery Information</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Support Center</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+            </div>
+
+            <!-- Account -->
+            <div class="footer-col">
+                <h4>Account</h4>
+                <ul>
+                    <li><a href="#">Sign In</a></li>
+                    <li><a href="#">View Cart</a></li>
+                    <li><a href="#">My Wishlist</a></li>
+                    <li><a href="#">Track My Order</a></li>
+                    <li><a href="#">Help Ticket</a></li>
+                    <li><a href="#">Shipping Details</a></li>
+                    <li><a href="#">Compare products</a></li>
+                </ul>
+            </div>
+
+            <!-- Corporate -->
+            <div class="footer-col">
+                <h4>Corporate</h4>
+                <ul>
+                    <li><a href="#">Become a Vendor</a></li>
+                    <li><a href="#">Affiliate Program</a></li>
+                    <li><a href="#">Farm Business</a></li>
+                    <li><a href="#">Farm Careers</a></li>
+                    <li><a href="#">Our Suppliers</a></li>
+                    <li><a href="#">Accessibility</a></li>
+                    <li><a href="#">Promotions</a></li>
+                </ul>
+            </div>
+
+            <!-- Popular -->
+            <div class="footer-col">
+                <h4>Popular</h4>
+                <ul>
+                    <li><a href="#">Milk & Flavoured Milk</a></li>
+                    <li><a href="#">Butter and Margarine</a></li>
+                    <li><a href="#">Eggs Substitutes</a></li>
+                    <li><a href="#">Marmalades</a></li>
+                    <li><a href="#">Sour Cream and Dips</a></li>
+                    <li><a href="#">Tea & Kombucha</a></li>
+                    <li><a href="#">Cheese</a></li>
+                </ul>
+            </div>
+
+            <!-- Install App -->
+            <div style="flex: 1 1 250px;" class="footer-col install-app">
+                <h4>Install App</h4>
+                <p>From App Store or Google Play</p>
+                <div class="app-links">
+                    <img src="https://nest-nextjs-13.vercel.app/assets/imgs/theme/app-store.jpg" alt="App Store">
+                    <img src="https://nest-nextjs-13.vercel.app/assets/imgs/theme/google-play.jpg" alt="Google Play">
+                </div>
+                <p>Secured Payment Gateways</p>
+                <div class="payment-icons">
+                    <img src="https://nest-nextjs-13.vercel.app/assets/imgs/theme/payment-method.png" alt="Visa">
+                    <!-- <img src="mastercard.png" alt="MasterCard">
+                    <img src="maestro.png" alt="Maestro">
+                    <img src="americanexpress.png" alt="Amex"> -->
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Bottom -->
+        <div class="footer-bottom">
+            <div class="footer-copy">
+                © 2024, <b>Nest</b> - HTML Ecommerce Template. All rights reserved
+            </div>
+            <div class="footer-hotline">
+                <span style="font-size: 1.5rem; color: #3bb77e;"><i class="fa-solid fa-phone"></i> 1900 - 6666 <small>Working 8:00 - 22:00</small></span>
+                <span style="font-size: 1.5rem; color: #3bb77e;"><i class="fa-solid fa-phone"></i> 1900 - 8888 <small>24/7 Support Center</small></span>
+            </div>
+            <div class="footer-social">
+                <b style="font-size: 1rem; color: #3bb77e;">Follow Us</b>
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-pinterest"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="scripts/auth.js"></script>
+</body>
+</html>

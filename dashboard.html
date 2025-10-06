@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopHub - Dashboard</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- header -->
+        
+
+                
+                
+                   
+                    
+     
+    
+    <!-- Header -->
+    <div class="container">
+    <!-- Top bar -->
+    <div class="top-bar">
+      <div class="top-bar-left">
+        <a href="#">About Us</a>
+        <a href="#">My Account</a>
+        <a href="#">Wishlist</a>
+        <a href="#">Order Tracking</a>
+      </div>
+      <div class="top-bar-right">
+        <span>Get great devices up to 50% off <a href="#">View details</a></span>
+        <span>Need help? Call Us: <b>1800 900</b></span>
+        <a href="#">English</a>
+        <a href="#">USD</a>
+      </div>
+    </div>
+
+    <!-- Main nav -->
+    <div class="main-nav">
+      <div class="logo">
+        <img src="https://nest-nextjs-13.vercel.app/assets/imgs/theme/logo.svg" alt="Nest Logo">
+      </div>
+
+      <div class="search-box">
+        <select>
+          <option>All Categories</option>
+        </select>
+        <input type="text" placeholder="Search">
+      </div>
+
+      <div class="nav-right">
+        <a href="#"><i class="fa-solid fa-code-compare"></i> Compare <span class="badge">5</span></a>
+        <a href="#"><i class="fa-regular fa-heart"></i> Wishlist <span class="badge">0</span></a>
+        <a href="#"><i class="fa-solid fa-cart-shopping"></i> Cart <span class="badge">1</span></a>
+            <div class="user-info">
+                <svg class="icon-md" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                </svg>
+                <span id="headerUsername" class="user-name"></span>
+            </div>
+      </div>
+    </div>
+
+    <!-- Bottom menu -->
+    <div class="bottom-menu">
+      <div class="bottom-left">
+        <a href="#" class="browse-btn"><i class="fa-solid fa-bars"></i> Browse All Categories</a>
+        <a href="#">Hot Deals</a>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Shop</a>
+        <a href="#">Vendors</a>
+        <a href="#">Mega menu</a>
+        <a href="#">Blog</a>
+        <a href="#">Pages</a>
+        <a href="#">Contact</a>
+      </div>
+      <div class="bottom-right">
+        <i class="fa-solid fa-headset"></i>
+        <span>1900 - 888 <small>24/7 Support Center</small></span>
+      </div>
+    </div>
+  </div>
+
+    <!-- Main Layout -->
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <button onclick="navigateTo('dashboard')" data-page="dashboard" class="nav-button active">
+                    <svg class="icon-md" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                    </svg>
+                    <span>Dashboard</span>
+                </button>
+                
+                <button onclick="navigateTo('orders')" data-page="orders" class="nav-button">
+                    <svg class="icon-md" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+                    </svg>
+                    <span>Orders</span>
+                </button>
+                
+                <button onclick="navigateTo('track')" data-page="track" class="nav-button">
+                    <svg class="icon-md" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
+                    </svg>
+                    <span>Track Your Order</span>
+                </button>
+                
+                <button onclick="navigateTo('address')" data-page="address" class="nav-button">
+                    <svg class="icon-md" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                    </svg>
+                    <span>My Address</span>
+                </button>
+                
+                <button onclick="navigateTo('account')" data-page="account" class="nav-button">
+                    <svg class="icon-md" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                    </svg>
+                    <span>Account details</span>
+                </button>
+                
+                <button onclick="logout()" class="nav-button">
+                    <svg class="icon-md" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path>
+                    </svg>
+                    <span>Logout</span>
+                </button>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Dashboard Home Page -->
+            <section id="dashboardPage" class="page-section active">
+                <h1>Hello <span id="dashboardUsername"></span>!</h1>
+                <p class="mb-8">
+                    From your account dashboard, you can easily check & view your 
+                    <strong style="color: #10b981;">recent orders</strong>, manage your 
+                    <strong style="color: #10b981;">shipping and billing addresses</strong> and 
+                    <strong style="color: #10b981;">edit your password and account details</strong>.
+                </p>
+
+                <!-- Statistics Cards -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-content">
+                            <div>
+                                <p class="stat-label">Total Orders</p>
+                                <p class="stat-value">21</p>
+                            </div>
+                            <div class="stat-icon" style="background: #3b82f6;">
+                                <svg class="icon-lg" style="color: white;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-content">
+                            <div>
+                                <p class="stat-label">Delivered</p>
+                                <p class="stat-value">12</p>
+                            </div>
+                            <div class="stat-icon" style="background: #10b981;">
+                                <svg class="icon-lg" style="color: white;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-content">
+                            <div>
+                                <p class="stat-label">On the Way</p>
+                                <p class="stat-value">5</p>
+                            </div>
+                            <div class="stat-icon" style="background: #f97316;">
+                                <svg class="icon-lg" style="color: white;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0"></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-content">
+                            <div>
+                                <p class="stat-label">Processing</p>
+                                <p class="stat-value">3</p>
+                            </div>
+                            <div class="stat-icon" style="background: #eab308;">
+                                <svg class="icon-lg" style="color: white;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Charts -->
+                <div class="chart-grid">
+                    <div class="chart-card">
+                        <h3 class="chart-title">Order Status Distribution</h3>
+                        <div class="chart-container">
+                            <canvas id="pieChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="chart-card">
+                        <h3 class="chart-title">Monthly Orders</h3>
+                        <div class="chart-container">
+                            <canvas id="barChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Activity -->
+                <div class="activity-card">
+                    <h3 class="chart-title">Recent Order Activity</h3>
+                    <div class="activity-list">
+                        <div class="activity-item success">
+                            <svg class="activity-icon success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            <div class="activity-content">
+                                <p class="activity-text">Order #2366 has been delivered</p>
+                                <p class="activity-date">August 05, 2025</p>
+                            </div>
+                        </div>
+
+                        <div class="activity-item info">
+                            <svg class="activity-icon info" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0"></path>
+                            </svg>
+                            <div class="activity-content">
+                                <p class="activity-text">Order #2468 is on the way</p>
+                                <p class="activity-date">October 03, 2025</p>
+                            </div>
+                        </div>
+
+                        <div class="activity-item warning">
+                            <svg class="activity-icon warning" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            <div class="activity-content">
+                                <p class="activity-text">Order #1357 is being processed</p>
+                                <p class="activity-date">October 01, 2025</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Orders Page -->
+            <section id="ordersPage" class="page-section">
+                <h1 class="mb-8">Your Orders</h1>
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Order</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                                <th>Total</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#1357</td>
+                                <td>March 45, 2020</td>
+                                <td>Processing</td>
+                                <td>$125.00 for 2 items</td>
+                                <td><a href="#" class="table-link">View</a></td>
+                            </tr>
+                            <tr>
+                                <td>#2468</td>
+                                <td>June 29, 2020</td>
+                                <td style="color: #10b981;">Completed</td>
+                                <td>$364.00 for 5 items</td>
+                                <td><a href="#" class="table-link">View</a></td>
+                            </tr>
+                            <tr>
+                                <td>#2366</td>
+                                <td>August 02, 2020</td>
+                                <td style="color: #10b981;">Completed</td>
+                                <td>$280.00 for 3 items</td>
+                                <td><a href="#" class="table-link">View</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Track Order Page -->
+            <section id="trackPage" class="page-section">
+                <h1 class="mb-8">Track Your Order</h1>
+                
+                <div class="tracking-form">
+                    <form id="trackForm" class="tracking-input-group">
+                        <input 
+                            type="text" 
+                            id="orderNumber" 
+                            class="form-input tracking-input" 
+                            placeholder="Enter your order number (e.g., #1357)"
+                        >
+                        <button type="submit" class="btn-success">
+                            Track Order
+                        </button>
+                    </form>
+                </div>
+
+                <div id="trackingResult" class="tracking-result hidden">
+                    <div class="tracking-header">
+                        <h2 class="tracking-title">Order <span id="resultOrderNumber"></span></h2>
+                        <p class="tracking-info">Status: <strong style="color: #10b981;">In Transit</strong></p>
+                        <p class="tracking-info">Estimated Delivery: October 10, 2025</p>
+                        <p class="tracking-info">Current Location: Distribution Center - New York</p>
+                    </div>
+
+                    <div class="tracking-timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-marker">
+                                <div class="timeline-dot active"></div>
+                                <div class="timeline-line active"></div>
+                            </div>
+                            <div class="timeline-content">
+                                <p class="timeline-text">Order Placed</p>
+                                <p class="timeline-date">Oct 3, 2025</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-marker">
+                                <div class="timeline-dot active"></div>
+                                <div class="timeline-line active"></div>
+                            </div>
+                            <div class="timeline-content">
+                                <p class="timeline-text">Processing</p>
+                                <p class="timeline-date">Oct 4, 2025</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-marker">
+                                <div class="timeline-dot active"></div>
+                                <div class="timeline-line active"></div>
+                            </div>
+                            <div class="timeline-content">
+                                <p class="timeline-text">Shipped</p>
+                                <p class="timeline-date">Oct 5, 2025</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-marker">
+                                <div class="timeline-dot active"></div>
+                                <div class="timeline-line active"></div>
+                            </div>
+                            <div class="timeline-content">
+                                <p class="timeline-text">In Transit</p>
+                                <p class="timeline-date">Oct 7, 2025</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-marker">
+                                <div class="timeline-dot inactive"></div>
+                                <div class="timeline-line inactive"></div>
+                            </div>
+                            <div class="timeline-content">
+                                <p class="timeline-text inactive">Out for Delivery</p>
+                                <p class="timeline-date">Oct 10, 2025</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-marker">
+                                <div class="timeline-dot inactive"></div>
+                            </div>
+                            <div class="timeline-content">
+                                <p class="timeline-text inactive">Delivered</p>
+                                <p class="timeline-date">Oct 10, 2025</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- My Address Page -->
+            <section id="addressPage" class="page-section">
+                <h1 class="mb-8">My Address</h1>
+                
+                <div class="address-grid">
+                    <div class="address-card">
+                        <div class="address-header">
+                            <h3 class="address-title">Shipping Address</h3>
+                            <button class="btn-outline">Edit</button>
+                        </div>
+                        <div class="address-details">
+                            <p>Rosie Smith</p>
+                            <p>123 Main Street</p>
+                            <p>New York, NY 10001</p>
+                            <p>(555) 123-4567</p>
+                        </div>
+                    </div>
+
+                    <div class="address-card">
+                        <div class="address-header">
+                            <h3 class="address-title">Billing Address</h3>
+                            <button class="btn-outline">Edit</button>
+                        </div>
+                        <div class="address-details">
+                            <p>Rosie Smith</p>
+                            <p>456 Oak Avenue</p>
+                            <p>Brooklyn, NY 11201</p>
+                            <p>(555) 987-6543</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-6">
+                    <button class="btn-success">Add New Address</button>
+                </div>
+            </section>
+
+            <!-- Account Details Page -->
+            <section id="accountPage" class="page-section">
+                <h1 class="mb-8">Account Details</h1>
+                
+                <div class="form-container">
+                    <form id="accountForm">
+                        <div class="form-row">
+                            <div>
+                                <label class="form-label">First Name</label>
+                                <input type="text" class="form-input" value="Rosie">
+                            </div>
+                            <div>
+                                <label class="form-label">Last Name</label>
+                                <input type="text" class="form-input" value="Smith">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Email Address</label>
+                            <input type="email" class="form-input" value="rosie.smith@example.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Phone Number</label>
+                            <input type="tel" class="form-input" value="(555) 123-4567">
+                        </div>
+
+                        <div class="form-section">
+                            <h3 class="form-section-title">Change Password</h3>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Current Password</label>
+                                <input type="password" class="form-input">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">New Password</label>
+                                <input type="password" class="form-input">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Confirm New Password</label>
+                                <input type="password" class="form-input">
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn-success">Save Changes</button>
+                            <button type="button" class="btn-secondary">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer container">
+        <div class="footer-main">
+
+            <!-- Left Info -->
+            <div class="footer-info">
+                <img src="https://nest-nextjs-13.vercel.app/assets/imgs/theme/logo.svg" alt="Nest Logo" class="footer-logo">
+                <p class="footer-desc">Awesome grocery store website template</p>
+                <p style="margin-right: 10px;"><i class="fa-solid fa-location-dot"></i> <b>Address:</b> 5171 W Campbell Ave undefined Kent, Utah
+                    53127 United States</p>
+                <p><i class="fa-solid fa-headset"></i> <b>Call Us:</b> (+91) - 540-025-124553</p>
+                <p><i class="fa-solid fa-envelope"></i> <b>Email:</b> sale@Nest.com</p>
+                <p><i class="fa-solid fa-clock"></i> <b>Hours:</b> 10:00 - 18:00, Mon - Sat</p>
+            </div>
+
+            <!-- Company -->
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Delivery Information</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Support Center</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+            </div>
+
+            <!-- Account -->
+            <div class="footer-col">
+                <h4>Account</h4>
+                <ul>
+                    <li><a href="#">Sign In</a></li>
+                    <li><a href="#">View Cart</a></li>
+                    <li><a href="#">My Wishlist</a></li>
+                    <li><a href="#">Track My Order</a></li>
+                    <li><a href="#">Help Ticket</a></li>
+                    <li><a href="#">Shipping Details</a></li>
+                    <li><a href="#">Compare products</a></li>
+                </ul>
+            </div>
+
+            <!-- Corporate -->
+            <div class="footer-col">
+                <h4>Corporate</h4>
+                <ul>
+                    <li><a href="#">Become a Vendor</a></li>
+                    <li><a href="#">Affiliate Program</a></li>
+                    <li><a href="#">Farm Business</a></li>
+                    <li><a href="#">Farm Careers</a></li>
+                    <li><a href="#">Our Suppliers</a></li>
+                    <li><a href="#">Accessibility</a></li>
+                    <li><a href="#">Promotions</a></li>
+                </ul>
+            </div>
+
+            <!-- Popular -->
+            <div class="footer-col">
+                <h4>Popular</h4>
+                <ul>
+                    <li><a href="#">Milk & Flavoured Milk</a></li>
+                    <li><a href="#">Butter and Margarine</a></li>
+                    <li><a href="#">Eggs Substitutes</a></li>
+                    <li><a href="#">Marmalades</a></li>
+                    <li><a href="#">Sour Cream and Dips</a></li>
+                    <li><a href="#">Tea & Kombucha</a></li>
+                    <li><a href="#">Cheese</a></li>
+                </ul>
+            </div>
+
+            <!-- Install App -->
+            <div style="flex: 1 1 250px;" class="footer-col install-app">
+                <h4>Install App</h4>
+                <p>From App Store or Google Play</p>
+                <div class="app-links">
+                    <img src="https://nest-nextjs-13.vercel.app/assets/imgs/theme/app-store.jpg" alt="App Store">
+                    <img src="https://nest-nextjs-13.vercel.app/assets/imgs/theme/google-play.jpg" alt="Google Play">
+                </div>
+                <p>Secured Payment Gateways</p>
+                <div class="payment-icons">
+                    <img src="https://nest-nextjs-13.vercel.app/assets/imgs/theme/payment-method.png" alt="Visa">
+                    <!-- <img src="mastercard.png" alt="MasterCard">
+                    <img src="maestro.png" alt="Maestro">
+                    <img src="americanexpress.png" alt="Amex"> -->
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Bottom -->
+        <div class="footer-bottom">
+            <div class="footer-copy">
+                © 2024, <b>Nest</b> - HTML Ecommerce Template. All rights reserved
+            </div>
+            <div class="footer-hotline">
+                <span style="font-size: 1.5rem; color: #3bb77e;"><i class="fa-solid fa-phone"></i> 1900 - 6666 <small>Working 8:00 - 22:00</small></span>
+                <span style="font-size: 1.5rem; color: #3bb77e;"><i class="fa-solid fa-phone"></i> 1900 - 8888 <small>24/7 Support Center</small></span>
+            </div>
+            <div class="footer-social">
+                <b style="font-size: 1rem; color: #3bb77e;">Follow Us</b>
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-pinterest"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="scripts/dashboard.js"></script>
+</body>
+</html>
